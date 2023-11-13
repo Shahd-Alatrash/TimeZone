@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!--font awesome 6-->
+    <link rel="stylesheet" href="vendor/all.min.css" />
+    <!--custome css-->
+    <link rel="stylesheet" href="assets/CSS/style.css" />
+  </head>
+  <body>
+    <!-- ############################################################################ start navbar ##############################################################################-->
+    <nav>
+      <div class="row">
+        <a href="index.html" class="logo">
+          <img src="assets/img/logo.png.webp" />
+        </a>
+
+        <label for="inpChecked">
+          <i class="fa-solid fa-bars"></i>
+          <!--  فكرة المنيو انه بدي اياها تظهر ع شاشة الايباد ولكن لما اضغط عليها , ف بستخدم شيك بوكس عشان لما اضغط يظهرلي الاشياء الي في المنيو ، عشان لما اضغط ينتقل اذن لازم اعطي اي دي لل شيك بوكس -->
+        </label>
+        <input type="checkbox" id="inpChecked" />
+
+        <div class="nav-list">
+          <ul class="List">
+            <li class="List-Item"> <a class="nav-link" href="#">Home</a> </li>
+            <li class="List-Item"> <a class="nav-link" href="#">Shop</a> </li>
+            <li class="List-Item"> <a class="nav-link" href="#">About</a> </li>
+            <li class="List-Item"> <a class="nav-link" href="#">Latest</a>
+              <ul class="dropdown">
+                <li class="dropdown-item"> <a href="#" class="dropdown-link">product list</a> </li>
+                <li class="dropdown-item"> <a href="#" class="dropdown-link">product details</a> </li>
+              </ul>
+            </li>
+        
+            <li class="List-Item"> <a class="nav-link" href="#">Blog</a>
+              <ul class="dropdown">
+                <li class="dropdown-item"> <a href="#" class="dropdown-link">blog</a> </li>
+                <li class="dropdown-item"> <a href="#" class="dropdown-link">blog details</a> </li>
+              </ul>
+            </li>
+          
+          </li>
+            <li class="List-Item"> <a class="nav-link" href="#">Pages</a> 
+              <ul class="dropdown">
+                <li class="dropdown-item"> <a href="#" class="dropdown-link">Login</a> </li>
+                <li class="dropdown-item"> <a href="#" class="dropdown-link">Cart</a> </li>
+                <li class="dropdown-item"> <a href="#" class="dropdown-link">Element</a> </li>
+                <li class="dropdown-item"> <a href="#" class="dropdown-link">Confirmation</a> </li>
+                <li class="dropdown-item"> <a href="#" class="dropdown-link">Product checkout</a> </li>
+              </ul>
+            </li>
+            </li>
+            <li class="List-Item"> <a class="nav-link" href="#">Contact</a> </li>
+          </ul>
+
+        </div>
+        
+        <div class="nav-icon">
+          <a href="#">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </a>
+          <a href="#">
+            <i class="fa-regular fa-user"></i>
+          </a>
+          <a href="#">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </a>
+        </div>
+        </div>
+    </nav>
+    <!-- ############################################################################ end navbar ##############################################################################-->
+
+    <!-- ############################################################################ start header ##############################################################################-->
+    <header>
+      <div class="container">
+        <div class="row">
+          <div class="header-content">
+            <h1>Select Your New Perfect Style</h1>
+            <p>
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat is aute irure.
+            </p>
+            <button class="btn">SHOP NOW</button>
+          </div>
+          <div class="header-img">
+            <img src="assets/img/watch.png.webp" />
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- ############################################################################ end header ##############################################################################-->
+
+    <!-- ############################################################################ start Arrivals ##############################################################################-->
+
+    <section class="arrivals">
+      <div class="container">
+        <h2 class="title">New Arrivals</h2>
+        <div class="row">
+          <div class="parent">
+            <div class="img-over">
+              <img src="assets/img/arrivals/new_product1.png.webp" />
+              <!--لحل مشكلة انه لما يعمل سكيل للصورة ما تغطي او تطلع ع الكتابة الي تحتها ، الحل انه احط الصورة في ديف لحاله واعمله خاصية اوفر فلو هيدين -->
+            </div>
+            <div class="caption">
+              <a href="#">Thermo Ball Etip Gloves </a>
+              <p>$ 45,743</p>
+            </div>
+          </div>
+
+          <div class="parent">
+            <div class="img-over">
+              <img src="assets/img/arrivals/new_product2.png.webp" />
+            </div>
+
+            <div class="caption">
+              <a href="#">Thermo Ball Etip Gloves </a>
+              <p>$ 45,743</p>
+            </div>
+          </div>
+
+          <div class="parent">
+            <div class="img-over">
+              <img src="assets/img/arrivals/new_product3.png.webp" />
+            </div>
+            <div class="caption">
+              <a href="#">Thermo Ball Etip Gloves </a>
+              <p>$ 45,743</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ############################################################################ end Arrivals ##############################################################################-->
+
+    <!-- ############################################################################ start gallery ##############################################################################-->
+
+    <div class="gallery">
+      <div class="gallery-row">
+        <!--عملت روه جديد عشان خصائصه بتختلف عن الي حطيته بالببلك -->
+        <div class="img-single">
+          <!--واحد-->
+          <!--  رقم واحد وتنين وتلاتdisplay:fleex;   يلي رح يتأثر بخاصية -->
+          <img src="assets/img/gallery/gallery1.png.webp" />
+          <div class="gallery-overlay"></div>
+          <!--عشان اخفف من لون الصورة لما احط الماوس ، بحط هاد الكلاس تحت كل صورة -->
+        </div>
+
+        <div class="img-single">
+          <!--تنين-->
+          <img src="assets/img/gallery/gallery2.png.webp" />
+          <div class="gallery-overlay"></div>
+        </div>
+
+        <div class="img-single">
+          <!--تلات-->
+          <div class="gallery-column">
+            <div class="img-single">
+              <img src="assets/img/gallery/gallery3.png.webp" />
+              <div class="gallery-overlay"></div>
+            </div>
+
+            <div class="img-single">
+              <img src="assets/img/gallery/gallery4.png.webp" />
+              <div class="gallery-overlay"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ############################################################################ end gallery ##############################################################################-->
+
+    <!-- ############################################################################ start   Popular Items ##############################################################################-->
+
+    <section class="popular">
+      <div class="container">
+        <div class="title">
+          <h2>popular Items</h2>
+          <p>
+            Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+            labore et dolore magna aliqua. Quis ipsum suspendisse ultrices
+            gravida.
+          </p>
+        </div>
+        <div class="row">
+          <div class="single-popular">
+            <div class="img-popular">
+              <img src="assets/img/popular/popular1.png.webp" />
+              <a href="#" class="icon-popular"
+                ><i class="fa-regular fa-heart"></i
+              ></a>
+              <a href="#" class="add-cart">Add To Cart</a>
+            </div>
+
+            <div class="caption">
+              <a href="#">Thermo Ball Etip Gloves</a>
+              <p>$ 45,743</p>
+            </div>
+          </div>
+          <div class="single-popular">
+            <div class="img-popular">
+              <img src="assets/img/popular/popular2.png.webp" />
+              <a href="#" class="icon-popular"
+                ><i class="fa-regular fa-heart"></i
+              ></a>
+              <a href="#" class="add-cart">Add To Cart</a>
+            </div>
+
+            <div class="caption">
+              <a href="#">Thermo Ball Etip Gloves</a>
+              <p>$ 45,743</p>
+            </div>
+          </div>
+          <div class="single-popular">
+            <div class="img-popular">
+              <img src="assets/img/popular/popular3.png.webp" />
+              <a href="#" class="icon-popular"
+                ><i class="fa-regular fa-heart"></i
+              ></a>
+              <a href="#" class="add-cart">Add To Cart</a>
+            </div>
+
+            <div class="caption">
+              <a href="#">Thermo Ball Etip Gloves</a>
+              <p>$ 45,743</p>
+            </div>
+          </div>
+          <div class="single-popular">
+            <div class="img-popular">
+              <img src="assets/img/popular/popular4.png.webp" />
+              <a href="#" class="icon-popular"
+                ><i class="fa-regular fa-heart"></i
+              ></a>
+              <a href="#" class="add-cart">Add To Cart</a>
+            </div>
+
+            <div class="caption">
+              <a href="#">Thermo Ball Etip Gloves</a>
+              <p>$ 45,743</p>
+            </div>
+          </div>
+          <div class="single-popular">
+            <div class="img-popular">
+              <img src="assets/img/popular/popular5.png.webp" />
+              <a href="#" class="icon-popular"
+                ><i class="fa-regular fa-heart"></i
+              ></a>
+              <a href="#" class="add-cart">Add To Cart</a>
+            </div>
+
+            <div class="caption">
+              <a href="#">Thermo Ball Etip Gloves</a>
+              <p>$ 45,743</p>
+            </div>
+          </div>
+          <div class="single-popular">
+            <div class="img-popular">
+              <img src="assets/img/popular/popular6.png.webp" />
+              <a href="#" class="icon-popular"
+                ><i class="fa-regular fa-heart"></i
+              ></a>
+              <a href="#" class="add-cart">Add To Cart</a>
+            </div>
+
+            <div class="caption">
+              <a href="#">Thermo Ball Etip Gloves</a>
+              <p>$ 45,743</p>
+            </div>
+          </div>
+        </div>
+        <button class="btn">VIEW MORE PRODUCTS</button>
+      </div>
+    </section>
+
+    <!-- ############################################################################ end Popular Items  ##############################################################################-->
+
+    <!-- ############################################################################ start   video ##############################################################################-->
+   
+    <section  class="video">
+      <div class="play-btn "><a  href="https://www.youtube.com/watch?v=KMc6DyEJp04"><i class="fas fa-play"></i></a></div>
+      <div class="box">
+          <div class="content">
+          <h3>NEXT VIDEO</h3>
+          <a href="#"><i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+      </div>
+
+      
+</section>
+    <!-- ############################################################################ end video  ##############################################################################-->
+
+    <!-- ############################################################################ start   watch1 ##############################################################################-->
+     
+<section class="watch" >
+<div class="container">
+  <div class="row">
+    <div class="watch-content">
+      <h1>Watch of Choice</h1>
+      <p>Enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.</p>
+      <button class="btn"> SHOW WATCHES</button>
+    </div>
+    <div class="watch-img">
+      <img src="assets/img/watches/choce_watch1.png.webp">
+    </div>
+  </div>
+</div>
+
+</section>
+    <!-- ############################################################################ end   watch1 ##############################################################################-->
+
+
+        <!-- ############################################################################ start   watch2 ##############################################################################-->
+
+
+<section class="watch" >
+  <div class="container">
+    <div class="row">
+
+      <div class="watch-img">
+        <img src="assets/img/watches/choce_watch2.png.webp">
+      </div>
+      <div class="watch-content">
+        <h1>Watch of Choice</h1>
+        <p>Enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.</p>
+        <button class="btn"> SHOW WATCHES</button>
+      </div>
+    </div>
+  </div>
+  
+  </section>
+      <!-- ############################################################################ end   watch2 ##############################################################################-->
+
+      <!-- ############################################################################ start   icons ##############################################################################-->
+
+      <section class="icons">
+
+<div class="container">
+  <div class="row">
+<div class="iconss">
+  <i class="fa-solid fa-cube"></i>
+  <h2>Free Shipping Method</h2>
+  <p>aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.</p>
+</div>
+
+<div class="iconss">
+  <i class="fa-solid fa-unlock"></i>
+  <h2>Secure Payment System</h2>
+  <p>aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.</p>
+</div>
+
+<div class="iconss">
+  <i class="fa-solid fa-arrows-rotate"></i>
+  <h2>Secure Payment System</h2>
+  <p>aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.</p>
+</div>
+
+
+  </div>
+</div>
+
+
+      </section>
+
+            <!-- ############################################################################ end   icons ##############################################################################-->
+
+          <!-- ############################################################################ start   footer ##############################################################################-->
+      <div class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="footerr">
+              <a href="index.html" class="logo">
+                <img src="assets/img/logo.png.webp" />
+              </a>
+              <p> Asorem ipsum adipolor sdit amet, consectetur adipisicing elitcf sed do eiusmod tem.</p>
+            </div>
+
+            <div class="footerr">
+              <p> Quick Links</p>
+              <ul>
+                <li><a href="index.html">About</a></li>
+                <li><a href="index.html"> Offers & Discounts</a></li>
+                <li><a href="index.html"> Get Coupon</a></li>
+                <li><a href="index.html"> Contact Us</a></li>
+                </ul>
+  
+            </div>
+
+
+            <div class="footerr">
+              <p> New Products</p>
+              <ul>
+                <li><a href="index.html">Woman Cloth</a></li>
+                <li><a href="index.html"> Fashion Accessories</a></li>
+                <li><a href="index.html"> Man Accessories</a></li>
+                <li><a href="index.html"> Rubber made Toys</a></li>
+                </ul>
+  
+            </div>
+
+            <div class="footerr">
+              <p>Support</p>
+              <ul>
+                <li><a href="index.html">Frequently Asked Questions</a></li>
+                <li><a href="index.html"> Terms & Conditions</a></li>
+                <li><a href="index.html"> Privacy Policy</a></li>
+                <li><a href="index.html"> Report a Payment Issue</a></li>
+                </ul>
+  
+            </div>
+
+
+          
+     
+
+          </div>
+        </div>
+      </div>
+
+          <!-- ############################################################################ end   footer ##############################################################################-->
+
+
+          <footer class="Copyright ">
+            <div class="container">
+              <div class="row">
+                <div class="row-paragraph">
+                  <p> Copyright &copy; 2022 All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
+
+                </div>
+             
+                <div class="social">
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  <a href="https://www.facebook.com/sai4ull"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#"><i class="fab fa-behance"></i></a>
+                  <a href="#"><i class="fas fa-globe"></i></a>
+                </div>
+              </div>
+            </div>
+
+            </footer>
+  </body>
+</html>

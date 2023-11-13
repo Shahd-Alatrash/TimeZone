@@ -1,0 +1,1059 @@
+/* #####################################################################    public style    ########################################################### */
+/*    fonts google  هاي الامبورت للخطوط،  */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap');
+
+
+*{
+    /*مشان اشيل كل البادنج والمارجن لكل التاجات*/
+    margin: 0;
+    padding: 0;
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;   /* في النص بشكل عامودي  */
+}
+
+.container{ /*مشان معظم الاقسام الي داخل الصفحة موجودة في داخل هاد الكونتينر ف الاسهل انه اعمل كلاس واله عرض ويكون في وسط الشاشة، أي سيكشن بدي ابنيه اول شي بسأل حالي ادا هوا جوا هاد الكونتينر ام لا ثاني سؤال بسأل حالي هل العناصر جوا بعض أم لا */
+    width: 78%;
+    margin: auto;/*مشان هاد الكلاس يكون في وسط الشاشة */
+}
+
+a{
+    text-decoration: none;  /* مشان اشيل الخط الي تحت اللينك*/
+}
+ul{
+    list-style-type: none; /*مشان اشيل الدوائر الي بحد الليست*/ 
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-family: "Josefin Sans",sans-serif;
+    color: #0b1c39;
+}
+
+.btn{
+    letter-spacing: 1.2px; /*مسافة بين الأحرف */
+    background-color: #ff2020;
+    padding: 15px 30px;
+    border: 0;   /*اشيل حدود البوردر*/
+    color: #fff;
+    position: relative;
+    z-index: 1;
+}
+
+.btn::before{ /*زي كأنه في عنصر مخفي وبدي اياه يتحرك من اليسار الى اليمين */
+    content: "";
+    position: absolute;
+    background-color: #333;
+    width: 0%;  /*العرض صفر ولكن لما اعمل الهافر بصير مية بالمية*/
+    height: 100%;
+    top: 0;  /*معناها ابعد عن الأب من فوق صفر وابعد عن الاب من اليسار صفر ، كأنه صار عندي تو بوتون فوق بعض */
+    left: 0;
+    z-index: -1;
+    transition: width .5s;
+}
+
+.btn:hover:before{
+    width: 100%;
+}
+
+
+/* ###########################################################################     nav bar    ########################################################## */
+
+nav{
+    background-color: #fff;
+    padding: 2%;
+    position: sticky;  /* هاد السطر والسطرين الي تحته عشان لما اعمل سكرول تضل الناف بار في الاعلى وما تختفي لما انزل لتحت*/
+    top: 0;
+    z-index: 99999; /*بعطي رقم كبير عشان شو ما يكون عندي انديكس في الموقع ، يكون الناف بار اكبر شي */
+    box-shadow: 1px 2px #d8d8d8;  /*زي كأنه عملت خط قيمته واحد بكسل ع محور اكس و تنين بكسل ع محور واي ، عشان لما انزل ع السيكشنات الي تحتها ينفصل الناف بار عن السيكشن */
+}
+
+/*دائما العناصر الي بدي احطهم بحد بعض لازم اعطيهم عرض*/
+
+nav .logo{
+width: 20%;
+}
+
+nav .nav-list{
+    width: 40%;
+}
+
+nav .nav-list .List{
+    display: flex;
+    justify-content: center; /*  ،  مشان اجيب الهوم والاباوت في وسط الديف ، هاي الخاصيبة ما بتزبط بدون الي فوقها*/
+}
+
+nav .nav-list .List .List-Item{
+margin-right: 32px;   /*مشان اعمل مسافة بين الكلمات الي في الناف وتكون المسافة من جهة اليمين */
+position: relative;
+}
+
+nav .nav-list .List-Item .dropdown{
+    position: absolute;
+    background: #fff;
+    top: 80px;
+    width: 151px;
+    padding: 25px 16px 0;
+    border-radius: 10px;
+    border-top: 2px #ff2020 solid;
+    opacity: 0;
+    visibility: hidden;
+    transition:opacity 1s,top 1s;
+}
+
+nav .nav-list .List-Item:hover .dropdown{
+    opacity: 1;
+    visibility: visible;
+    top: 61px;;
+} 
+
+nav .nav-list .List-Item .dropdown::before{
+     content:'';
+     position: absolute;
+     border-bottom: 10px red solid;
+     border-top:  10px transparent solid;
+     border-left: 10px transparent solid;
+     border-right: 10px transparent solid;
+     top:-22px
+}
+
+
+nav .nav-list .List-Item .dropdown .dropdown-item{
+margin-bottom: 15px;
+}
+
+nav .nav-list .List .List-Item .nav-link{
+    color: #141517;
+    font-weight:600 ;
+    font-size: 15px ;
+    transition:  color .4s;  /*المدة الزمنية في تغيير اللون لما اعمل هافر*/
+}
+
+nav .nav-list .List .List-Item:hover .nav-link{/*  لما اعمل هافر ع الليست ايتيم غيرلي لون الناف لينك ، لأنه ال اي لازم اناديها بشكل مباشر   ، معناها غيرلي اللون تبع الناف لينك الي جوا الليست ايتم (شرط يكون الي عاليمين ابن للي ع اليسار ) */
+    color: #ff2020;
+}
+.List-Item:nth-child(4)::after{
+    content: 'HOT';
+    position: absolute;
+    bottom: 19px;
+    background-color: #ff2020;
+    color: #fff;
+    padding: 4px 5px;
+    left: 25px;
+    font-size: 14px;
+    border-radius: 10px;
+}
+nav .nav-icon{
+    width: 20%;
+ /*مشان اجيب الايقونات في اقصى يمين الديف */
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav .nav-icon a{
+    color: #000;
+    margin-left: 16px;
+}
+  label,#inpChecked{
+    display: none; /* مشان اخفي الشيك بوكس من الشاشات العادية ، شاشة اللابتوب متلا */
+  }
+
+@media screen and (max-width:991px) {  /*  كل الشاشات الي اصغر من 991 بيكسل    */
+
+                /*   body{  
+                    background-color: red; 
+                    }/*مشان اتأكد اني ماسكة الشاشة صح */
+
+                    nav .nav-list{
+                        position: absolute;
+                        background-color: #333;
+                        top:100%; /*عشان تطلع كلها برا الناف */
+                        width: 90%;
+                        left: 3%;
+                        padding: 28px 18px;
+                        opacity: 0;  /*مشان اخفي الناف بار عن الايباد ولما اضغط ع منيو تظهرلي الليستات */
+                        visibility: hidden; /*مشان اخفي الناف بار عن الايباد ولما اضغط ع منيو تظهرلي الليستات */
+                    }
+                    label{
+                        display: block;  /*مشان اظهر المينيو الي كنت عاملها اخفاء فوق */
+                        order: 1;/*غيرت في الترتيب ، شلت المنيو من الوسط وحطيتها في اقصى اليمين بدل ما تكون في الوسط ، وجبت الايقونات حطيتهن في الوسط في شاشات الجوال */
+                    }
+                    
+                    #inpChecked:checked + .nav-list{   /*  يعني بوخد الخصائص تبعون ال ناف ليست */  /*الناف ليست لازم تكون اخ مباشر للاي دي هاد عشان اقدر اكتب + بدل ما اقعد اعمل كلاسات ، معناها الانبوت لما يصير مكبوس عليه في عندك اخ مباشر اسمه ناف ليست روح عليه واظهر الي فيه */
+                        opacity: 1;
+                        visibility: visible;
+                        transition: opacity 1s;
+                    }
+                    nav .nav-list .List{
+                        display: block;    /*عشان احولهم من بحد بعض الى تحت بعض ، شلت خاصية الفليكسبل واعطيته بلوك */
+                    }
+
+
+                    .List-Item:nth-child(4)::after{
+                        display: none;  /*مشان اخفي كلمة هوت*/
+                    }
+
+                    nav .nav-list .List .List-Item .nav-link{
+                    color: #fff;
+                    }
+
+                    nav .nav-list .List-Item{
+                        margin-right: 0px;  /*لأنه في البداية في الموقع الاصلي كنت عاملة مارجن من جهة اليمين ، ف بشيله وبعمل مارجن من الاسفل*/
+                        margin-bottom: 20px;    
+                    }
+
+                    nav .nav-list .List-Item .dropdown{
+                    display: none;
+                    }
+                    
+                    nav .nav-icon a,label{  /*عشان اكبر حجم المنيو والايقونات*/
+                        font-size: 20px;
+                    }
+
+                    nav .nav-icon {
+                        width: 7%; /*عشان تتحرك الايقونات شوي لليسار*/
+                    }
+                    
+    } 
+    
+@media screen and (max-width:575px){   /*  كل الشاشات الاصغر من 575 بيكسل (الجوال)  */
+    nav .logo{
+        width: 25%;
+    }
+    nav .logo img{
+        width: 100%;   /*   معناها بدي اخلي الصورة قد حجم ابوها بالزبط وليس بحجمها الاصلي */
+    }
+
+}
+    
+   
+/* ###########################################################################   start  header    ########################################################## */
+
+header{
+    background-color: #f0f0f2;
+}
+
+header .container{  /* اي شي اي كتابة بتزيد عن الكونتينر اعمله اخفاء */
+    overflow: hidden;
+}
+
+header .header-content{
+    width: 60%;
+   animation-name: contentLeft;
+   animation-duration: 2s;
+}
+
+header .header-content h1{
+    font-size: 80px;
+    font-weight: 700;
+    line-height: 1.3;/*هاي الخاصية مشان ابعد بين الاسطر (اعمل مسافة بين الاسطر )*/
+}
+
+header .header-content p{
+    margin: 40px 0px;
+    color: #212025;
+    width: 72%;
+}
+
+@keyframes contentLeft{  /* هون عملت انيميشن مشان الكونتانت يتحرك من اليسار الى اليمين بدون ما احط الماوس ، اول ما افتح الصفحة او اول ما اعمل ريفرش للصفحة */
+    0%{   /*بداية الانيميشن*/  /*صفر بالمية مكانها الحالي ، سالب مية بالمية يعني انقلها ع اليسار مية بالمية */
+        transform: translateX(-100%);
+    }
+    100%{   /*نهاية الانيميشن*/
+        transform: translateX(0%);
+    }
+
+}
+
+
+header .header-img{
+    width: 35%;
+    animation-name: imgScale;
+    animation-duration: 1.3s;
+    animation-iteration-count: infinite;/* عشان الصورة تكبر وتصغر للأبد وليس مرة واحدة */
+    animation-direction: alternate;/*عشان ما ترجع الصورة تصغر مرة واحدة ، ترجع ببطأ*/
+}
+
+
+@keyframes imgScale{  /*مشان صورة الساعة تكبر وتصغر */
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.1);
+    }
+}
+
+@media screen and  (max-width: 576px){ 
+  
+    header .header-img{  /* عشان اخفي صورة الساعة من الجوالات*/
+    display: none;
+    }
+
+
+    header .header-content h1{  /*عشان اصغر حجم الخط في الجوال*/
+        font-size: 48px;
+    }
+
+    header .header-content{ /* في شاشةاللابتوب كنت عاملة العرض ستين بالمية ، بشاشة الجوال بدي اخليه مية بالمية عشان الكتابة مش كل كلمة تنزل ع سطر*/
+        width: 100%;
+        padding-top: 10%;
+        padding-bottom: 10%;
+    }
+
+}
+
+@media screen and  (min-width: 576px) and (max-width:991px){
+
+    header .header-content h1{  /*عشان اصغر حجم الخط في الايباد*/
+        font-size: 58px;
+    }
+
+    header .header-img img{  /* عشان اخفي صورة الساعة تبين كلها مش جزء منها */  /*الهيدير ايمج ماخد عرض خمسة وثلاثين بالمية  ، فأنا بدي اياها توخد عرض مية بالمية من ابوها الي هوي الهيدر ايمج*/
+        width: 100%;  /*   ،  الي اصلا ماخد حجم 35 بالمية من العرض .header-img ،هون الصورة اخدت عرض مية بالمية من ابوها الي هوي */ 
+        }
+
+}
+
+/* ###########################################################################   end  header  section   ########################################################## */
+
+
+/* ###########################################################################  start arrivals  section   ########################################################## */
+
+.arrivals{
+    padding-top: 10%;
+    padding-bottom: 10%;
+}
+
+
+.arrivals .row{ /*لأنه في الببلك انا معطي الصف سبيس بالتالي رح يصير في مسافة كبيرة بين الصور ، ف بشيل المسافة الخاصة بهاد الصف الي موجود في هاد السيكشن */
+    justify-content: center;
+    gap: 20px;/*  هاي الخاصية ما بتتفعل الا لما يكون في قبلها فليكس */
+}
+
+
+.arrivals .parent{   /*دائما لما بدي جيب عناصر بحد بعض بعطيهم عرض */
+    width: 30%;
+}
+
+
+.arrivals .parent .img-over{  /*ل مشكلة انه لما يعمل سكيل للصورة ما تغطي او تطلع ع الكتابة الي تحتها ، الحل انه احط الصورة في ديف لحاله واعمله خاصية اوفر فلو هيدين */
+    overflow: hidden;
+}
+
+.arrivals .parent img{   /*دائما لما بدي جيب عناصر بحد بعض بعطيهم عرض */
+    width: 100%;
+    transition:transform .5s;
+}
+
+.arrivals .parent:hover img{  /*لما احط الماوس ع البروداكت كامل ، يعني حتى لو حطيت الماوس ع الكتابة الي تحت الصورة ، بدي يعمل سكيل للصورة  */
+    transform: scale(1.1);
+}
+
+.arrivals .title{
+    margin: 3% 0%;
+    font-size: 45px;
+}
+
+.arrivals .caption{
+text-align: center;
+margin-top: 4%; /*عشان الكتابة تبعد عن الصورة اربعة بالمية ، للحدود الخارجية*/
+}
+
+
+.arrivals .caption a {
+   font-size: 26px;
+   color: #444444;
+   font-weight: 800;
+   margin-bottom: 12px;
+   display: inline-block;  /*ادا ما حطيت هاي الخاصية ، ما رح يشتغلن الي قبلها ، لأنه اللينك عبارة عن انلاين ايليمنت ، لأن العنصر الي بكون انلاين ما بوخد مارجن ف لازم احوله الي انلاين بلوك عشان تشتغل خاصية المارجن*/
+
+}
+
+.arrivals .caption p {
+    color: #ff2020;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+@media screen and (min-width:576px) and (max-width:991px){
+    .arrivals .row{
+        flex-wrap: wrap;
+        justify-content: flex-start;/*لأنه الصورة التالتة بتيجي بالسطر الي تحت الصور الاولى والتانية ، ولكن في الوسط ما بتيجي من بداية السطر ، بهاي الخاصية بتيجي من اول السطر */
+    }
+
+    .arrivals .parent{
+        width: 45%;
+    }
+
+}
+
+
+@media screen and (max-width:575px) 
+{
+    .arrivals .row{
+        flex-wrap: wrap;   /*عشان ييجين الصور تحت بعض في الجوال ، او بعمل فليكس دايركشن بعطيه كولوم*/
+    }
+
+    .arrivals .parent{
+        width: 100%;
+    }
+
+    .arrivals .title{
+        font-size: 35px;
+    }
+}
+/* ###########################################################################  end arrivals  section   ########################################################## */
+
+/* ###########################################################################  start gallery  section   ########################################################## */
+.gallery .gallery-row{
+    display: flex;
+    gap: 20px;
+}
+
+.gallery .gallery-row .img-single{
+    width: 25%;  /*divعرض كل */
+    height: 680px;  /*divارتفاع كل */
+    overflow: hidden; /*div الي هيي فيه ، ف بخفي اي اشي اكبر من الdiv  لما كبرت الصورة صارت اكبر من*/
+    position: relative;  /*   ييجي فوق الصورة ،بعطيه بوزيشن ابسليوت ، والأب بوزيشن ريليتف gallery-overlay مشان ال  */
+}
+
+
+
+
+.gallery .gallery-row .img-single img{
+    width: 100%;  /*مشان كل صورة تبين ع حجمها الي خزنته فيها من النت */
+    height: 100%;
+    object-fit: cover;/*لحل مشكلة غباش الصور */
+    transform: scale(1.2);/*الفكرة انه اكبر الصورة ، بعدين اصغرها ، ما بزبط اصغرها مباشرة */
+    transition: transform .5s;
+}
+
+.gallery .gallery-row .img-single:nth-child(1):hover img, /*عشان اخر ديف لما اعمل هافر ما يتأثر الديف بشكل كامل ، انما كل صورة لحال عشان هيك حددت الابن الاول والابن التاني */
+.gallery .gallery-row .img-single:nth-child(2):hover img{
+    transform: scale(1.1);
+}
+
+
+.gallery .gallery-overlay{
+opacity: 0;
+transition:opacity .5s;
+
+}
+
+.gallery .gallery-row .img-single:nth-child(1):hover .gallery-overlay,  /*عشان اخر ديف لما اعمل هافر ما يتأثر الديف بشكل كامل ، انما كل صورة لحال عشان هيك حددت الابن الاول والابن التاني */
+.gallery .gallery-row .img-single:nth-child(2):hover .gallery-overlay{ /*لما اعمل هافر ع الايمج سنجل ، روح اعملي هاد التطبيق ع الجالاري اوفر لاي */
+background-color: #000;
+opacity: .5;
+position: absolute; /*   ييجي فوق الصورة ،بعطيه بوزيشن ابسليوت ، والأب بوزيشن ريليتف gallery-overlay مشان ال  */
+top: 0; /*هاي والتلات اسطر الي تحتها فكرتها نفس فكرة البوتون الي فوق ، اما بعطي طول وعرض مية بالمية او بعطي هدول كلهن اصفار حسب الشغل */
+bottom: 0;
+left: 0;
+right: 0;
+}
+.gallery .gallery-row .img-single:nth-child(1){  /*كل صورة الها عرض خمسة وعشرين ، بس انا بدي اول صورة الها عرض خمسين */
+width: 50%;
+}
+
+
+.gallery .gallery-row .img-single:nth-child(3) .gallery-column{
+    display: flex;
+    flex-direction: column;  /*مشان احط الصورتين فوق بعض */
+    gap: 20px;
+}
+
+
+.gallery .gallery-row .img-single:nth-child(3) .gallery-column .img-single{/*الي جوا ال جالاري كولم     img-single  ال */
+width: 100%;
+height: 330px;
+}
+
+@media screen and (min-width:576px) and (max-width:991px){
+    .gallery .gallery-row .img-single{
+        width: 47%;
+    }
+    .gallery .gallery-row{
+        flex-wrap: wrap;
+    }
+
+    .gallery .gallery-row .img-single:nth-child(3){
+        width: 100%;
+        height: 330px;
+    }
+    .gallery .gallery-row .img-single:nth-child(3) .gallery-column{
+        flex-direction: row;
+    }
+}
+@media screen and (max-width:575px){
+    .gallery .gallery-row{
+        flex-direction: column;/*عشان الصور ييجين فوق بعض بشكل عامودي */
+    }
+    .gallery .gallery-row .img-single{
+        width: 100%;/*لأنه لو ما حطيت العرض مية بالمية ، اول صورة رح تاخد خمسين بالمية لاني هيك كاتبة فوق بشاشة اللابتوب ، والصورة التانية والتالتة والرابعة رح توخد خمسة وعشرين بالمية */
+    }
+    .gallery .gallery-row .img-single:nth-child(1){  /*الصورة الاولى بتعامل معها لحالها لأنه فوق تعاملت معها لحالها */
+        width: 100%;
+        }
+
+}
+
+
+/* ###########################################################################  end gallery  section   ########################################################## */
+
+
+
+
+/* ###########################################################################  start popular  section   ########################################################## */
+
+.popular{
+    margin-top: 7%;
+    margin-bottom: 7%;
+}
+
+
+.popular .row{
+    flex-wrap: wrap;  /*كل واحد ماخد عرض معين ، انا بدي اياه يشغل هاد العرض الي هون*/
+}
+.popular .title{
+    text-align: center;
+    width: 42%;/*اشي شي في عرض وبدي اجيبه في الوسط لازم اعطيه مارجن اوتو*/
+    margin: auto;
+    margin-bottom: 5%;
+}
+
+.popular .title h2{
+font-size: 40px;
+font-weight: 800;
+margin-bottom: 4%;
+}
+
+
+.popular .title p{
+color: #777;
+line-height: 1.5;/*مسافة بين الاسطر*/
+
+}
+
+.popular .single-popular{
+    width: 30%;
+}
+
+.popular .single-popular img {
+    width: 100%;
+
+}
+
+.popular .single-popular .img-popular{
+    position: relative;
+    border-bottom: 4px solid #ff2020;/*  before عشان اعمل خط احمر من الاسف عند الصورة ، او بعملها عن طريق   */
+    margin-bottom: 3%;
+    overflow: hidden;
+}
+
+.popular .single-popular .img-popular i{
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    color: #333;
+    font-size: 25px;
+    opacity: 0;  /*  هاي والي تحتها عشان اخفي القلب ، لأني بدي اياه يبين لما احط الماوس على الديف الي فيه الصورة ، هاي الخاصية بتخفي القلب هوي الأصح بكون موجود بس شفافيته صفر */
+    visibility: hidden;
+    transition: opacity .5s;
+}
+
+.popular .single-popular .img-popular:hover i{
+opacity: 1; /*عشان القلب يبين لما اعمل هافار*/
+visibility: visible;
+}
+
+.popular .single-popular .img-popular .add-cart{
+    position: absolute;
+    background-color: #ff2020;
+    bottom: -30%;/*عشان انزلها لتحت واطلعها كلها برا الديف ولما اعمل الهافر تطلع فوق */
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    transition: bottom .7s;
+    color: #fff;
+}
+
+.popular .single-popular:hover .img-popular .add-cart{
+bottom: 0;
+}
+
+
+.popular .single-popular .caption{
+    text-align: center;
+}
+
+.popular .single-popular .caption a{
+    font-size: 20px;
+    color: #000;
+    font-weight: 800;
+}
+
+
+.popular .single-popular .caption p{
+    margin-top: 5%;
+    font-weight: 700;
+
+}
+.popular .btn{
+    margin: 5% auto; /*ادا كتبت هاي بدون السطر الي تحتها ما رح يحطلي البوتون في وسط الشاشة ، لأنه الرابط عبارة عن انلاين*/
+    display: block;
+}
+
+
+@media screen and (min-width:576px) and (max-width:991px){
+    .popular .title{
+        text-align: center;
+        width: 100%;/*اشي شي في عرض وبدي اجيبه في الوسط لازم اعطيه مارجن اوتو*/
+        margin: auto;
+        margin-bottom: 20%;
+        margin-top: 30%;
+        color:black;
+    }
+  
+     .popular .single-popular{
+        width: 50%;
+       
+     }
+  
+  
+     .popular .btn{
+        margin: 5% auto; /*ادا كتبت هاي بدون السطر الي تحتها ما رح يحطلي البوتون في وسط الشاشة ، لأنه الرابط عبارة عن انلاين*/
+        display: block;
+        margin-top: 20%;
+    }
+  
+
+}
+@media screen and (max-width:575px){
+    .popular .title{
+        text-align: center;
+        width: 100%;/*اشي شي في عرض وبدي اجيبه في الوسط لازم اعطيه مارجن اوتو*/
+        margin: auto;
+        margin-bottom: 20%;
+        margin-top: 30%;
+    }
+    .popular .single-popular{
+        width: 100%;
+        flex-direction: column; 
+    }
+    .popular .single-popular .caption{
+        text-align: center;
+        padding-top: 10px;
+    }
+    .popular .btn{
+        margin: 5% auto; /*ادا كتبت هاي بدون السطر الي تحتها ما رح يحطلي البوتون في وسط الشاشة ، لأنه الرابط عبارة عن انلاين*/
+        display: block;
+        margin-top: 20%;
+    }
+}
+/* ###########################################################################  end popular  section   ########################################################## */
+
+
+/* ###########################################################################  start video section   ########################################################## */
+
+
+.video{
+    background-image: url(../img/video/video1.png);
+    width: 100%;
+    height: 700px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+
+.video .play-btn{
+ position: absolute;
+ top: 50%;
+ left: 0;   
+ right: 0;
+ text-align: center;
+}
+
+.video .play-btn a {
+ width: 85px;
+ height: 85px;
+ display: inline-block;
+ line-height: 85px;
+ text-align: center;
+ color: #fff;
+ border-radius: 50%;
+ font-size: 24px;
+ padding-left: 5px;
+ padding-top: 1px;
+ border: 1px solid #fff;
+}
+
+.video .play-btn a:hover {
+color: #ea0000;
+background-color: #fff;
+}
+
+.box{
+ width: 18%;
+}
+
+
+
+.box .content {
+ position: absolute;
+ bottom: 0;
+ align-items: end;
+ background-image:  url(../img/video/vidoe2.png);
+ background-size: cover;
+ background-repeat: no-repeat;
+ display: flex;
+ justify-content: space-between;
+ padding: 60px 143px 60px 80px;
+ width: 100%;
+}
+
+
+.box .content h3 {
+ color: #ffffff;
+ font-weight: 600;
+ font-size: 16px;
+ margin: 0;
+
+}
+
+.box .content a {
+ color: #fff;
+ display: block;
+ position: relative;
+ right: -34px;
+ font-size: 30px;
+}
+
+
+.box {
+ position: absolute;
+ bottom: 0px;
+ left: 0px;
+}
+
+
+@media screen and (min-width:576px) and (max-width:991px){
+    .video{
+        height: 400px;
+        margin: 0px 1px;
+     }
+        
+     .box{
+        width: 30%;
+     }
+
+     .box .content { 
+         padding: 11px 49px 14px 9px;   
+     }
+}
+@media screen and (max-width:575px){
+    .video{
+        height: 400px;
+        margin: 0px 1px;
+     }
+        
+     .box{
+        width: 50%;
+     }
+
+     .box .content { 
+         padding: 11px 49px 14px 9px;   
+     }
+
+}
+
+/* ###########################################################################  end video section   ########################################################## */
+
+
+/* ########################################################################### start watch section   ########################################################## */
+
+.watch{
+    margin-top: 100px;
+}
+
+.watch .watch-content{
+   margin: 50px;
+}
+
+.watch .watch-content h1 {
+   font-size: 50px;
+   color: black;
+   font-weight: 200px;
+   margin-bottom: 30px;
+}
+
+.watch .watch-content p{
+    color:gray;
+    width: 80%;
+    margin-bottom: 30px;
+}
+
+.watch .watch-img {
+    width: 100%;
+  }
+
+  .watch .watch-img img{
+    width: 100%;
+  }
+
+@media screen and (min-width:576px) and (max-width:991px){
+    .watch .watch-content{
+        margin-left: 10px;
+      }
+     
+      .watch .watch-content h1{
+         font-size:25px;
+         font-weight: 500;
+         line-height: 5px;
+         margin-bottom: 40px;
+         margin-top: 40px;
+      }
+      .watch .watch-content p{
+         margin-bottom: 10%;
+         word-spacing: 1.6px;
+         line-height: 2;
+      }
+    
+      .watch .watch-img img{
+        width: 100%;
+        height: 200%;
+    
+      }
+
+      .watch .watch-img {
+        width: 100%;
+        margin-right: 100px;
+        height: 200%;
+      }  
+    
+ 
+}
+@media screen and (max-width:575px){
+    .watch .containar{
+        width: 100%;
+     }
+     
+  .watch .row{
+        flex-direction: column;
+  } 
+
+  .watch .watch-content{
+   margin-left: 10px;
+ }
+
+ .watch .watch-content h1{
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 5px;
+    margin-bottom: 40px;
+    margin-top: 40px;
+ }
+ .watch .watch-content p{
+    margin-bottom: 10%;
+    word-spacing: 1.6px;
+ }
+}
+
+/* ########################################################################### end watch section   ########################################################## */
+
+
+.icons{
+    margin: 50px;
+}
+
+.icons .iconss{
+    color: white;
+    background-color: red;
+    padding: 20px;
+}
+
+.icons .iconss i{
+    padding-top: 10px;
+    padding-bottom: 20px;
+    font-size: 25px;
+}
+
+.icons .iconss h2{
+    color: white;
+    padding-bottom: 20px;
+}
+
+.icons .iconss p{
+    width: 80%;
+    color: #d8d8d8;
+}
+
+
+@media screen and (min-width:576px) and (max-width:991px){
+    .icons .row{
+        width: 100%;
+        flex-direction: column; 
+    }
+.icons .container{
+    width: 95%;
+}
+.icons .row{
+    width: 95%;
+}
+
+.icons{
+    width: 100%;
+    margin: 10px;
+}
+}
+@media screen and (max-width:575px){
+    .icons .row{
+        width: 100%;
+        flex-direction: column; 
+    }
+.icons .container{
+    width: 95%;
+}
+.icons .row{
+    width: 95%;
+}
+
+.icons{
+    width: 100%;
+    margin: 10px;
+}
+}
+
+/* ########################################################################### end icons section   ########################################################## */
+.footer{
+    margin: 15px;
+}
+.footer .footerr {
+    width: 20%;
+    /* padding:10 px; */
+    }
+    
+
+.footer .footerr a{
+color:gray; 
+}
+
+.footer .footerr p{
+    margin-bottom: 5px;
+    padding-bottom: 20px;
+    font-weight: 700;
+    }
+
+.footer .footerr .logo img{
+    margin-bottom: 30px;
+}
+.footer .footerr:nth-child(1)  p{
+    color:gray; 
+    width: 100%;
+    
+    }
+
+li{
+    margin-bottom: 10px;
+}
+
+@media screen and (min-width:576px) and (max-width:991px){
+
+    .footer .row{
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    .footer .footerr{
+        margin-top: 10%;
+        width: 30%;
+    }
+
+
+}
+@media screen and (max-width:575px){
+    .footer{
+        align-items: flex-start;
+        width: 100%;
+    }
+    .footer .container{
+        width:100%;
+    }
+    .footer .row{
+        flex-direction: column; 
+        align-items: flex-start;
+    }
+
+    .footer .footerr {
+        width: 100%;
+    }
+    .footer .footerr .logo img{
+       margin-top: 30px;
+    }
+
+    li{
+        margin-bottom: 10px;
+    }
+}
+
+/* ########################################################################### end footerr section   ########################################################## */
+
+footer{
+    margin-top:5%;
+    margin-bottom: 5%;
+}
+
+.Copyright .row-paragraph p{
+color: #777;
+}
+
+.Copyright .row-paragraph i{
+    color: #ff2020;
+    }
+
+    .Copyright .row-paragraph a{
+        color: #ff2020;
+        }
+
+        .Copyright .social i{
+            color: #242323;
+            margin-right: 15px;
+            }
+
+
+            @media screen and (min-width:576px) and (max-width:991px){
+                .Copyright{
+                    align-items: flex-start;
+                    width: 100%;
+                    padding-left: 5%;
+                }
+                .Copyright .container{
+                    width:90%;
+                }
+        
+        
+            }
+            @media screen and (max-width:575px){
+              
+                .Copyright .row{
+                    width: 100%;
+                    flex-direction: column; 
+                    align-items: flex-start;
+                }
+
+                .Copyright .row-paragraph{
+                    margin-left: -30px;
+                }
+                .Copyright .social i{
+                    margin-left: -10px;
+                    margin-bottom: 10%;
+                    }
+
+                .Copyright .row-paragraph p{
+                   margin-bottom: 20px;
+                    }
+            }
